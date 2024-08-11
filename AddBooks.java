@@ -15,6 +15,7 @@ class AddBooks
     AddBooks(String isbn_param, String title_param, String author_param, String publication_year_param)
     {
         throwNullPointerException(isbn_param, title_param, author_param, publication_year_param);
+        checkISBNLength(isbn_param);
         this.isbn = isbn_param;
         this.author = author_param;
         this.title = title_param;
@@ -46,5 +47,21 @@ class AddBooks
     {
 
         abooks.add(new AddBooks(isbn_param,title_param,author_param,publication_year_param));
+    }
+    public void checkISBNLength(String isbn_param)
+
+    {
+        try {
+            if (isbn_param.length() < 5 || isbn_param.length() > 5) {
+                throw new RuntimeException("Length must be of 5 ");
+            }
+        }
+        catch(RuntimeException e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+
+
     }
 }
