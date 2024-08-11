@@ -49,7 +49,7 @@ public class BorrowBooks extends  AddBooks {
         }
         else if (bresult==0)
         {
-            throw new RuntimeException("Not Available") ;
+            throw new NullPointerException("Not Available") ;
         }
     }
     public void returnbook(String rbname)
