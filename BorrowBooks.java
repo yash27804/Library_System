@@ -27,6 +27,29 @@ public class BorrowBooks extends  AddBooks {
         {
             throw new NullPointerException("Name must be Given");
         }
+        int bresult=0;
+        for(AddBooks a: abooks)
+        {
+            if(a.title.equalsIgnoreCase(bname))
+            {
+                bbooks.add(new BorrowBooks(a.isbn,a.title,a.author,a.author));
+                bresult=1;
+                System.out.println("Borrow Successful");
+            }
+            else
+            {
+                bresult=0;
+            }
+
+        }
+        if(bresult==1)
+        {
+            abooks.removeIf(e->e.title.equalsIgnoreCase(bname));
+        }
+        else if (bresult==0)
+        {
+
+        }
     }
 
 }
