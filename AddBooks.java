@@ -1,6 +1,7 @@
 package  org.example;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 class AddBooks
 {
@@ -77,8 +78,19 @@ class AddBooks
                 System.out.println(e.getMessage());
             }
         }
+    }
+    public void getAllBooks()
+    {
 
-
-
+        if(abooks.size()==0)
+        {
+            //throw new NoSuchElementException("No Books To Display");
+        }
+        for(AddBooks a:abooks)
+        {
+            System.out.println("ISBN:"+a.isbn+"\n"+"Title:"+a.title+"\n"+"Author:"+a.author+"\n"+"publication_year:"+a.publication_year);
+            System.out.println("--------------------------");
+            count++;
+        }
     }
 }
