@@ -42,4 +42,9 @@ class AddBooks
         }
 
     }
+    public void validateandadd(String isbn_param,String title_param,String author_param,String publication_year_param)
+    {
+
+        abooks.add(new AddBooks(isbn_param,title_param,author_param,publication_year_param));
+    }
 }
