@@ -82,8 +82,7 @@ public class BorrowBooks extends  AddBooks {
         {
             bbooks.removeIf(e->e.title.equalsIgnoreCase(rbname));
             System.out.println("Return Successful");
-        } else if (rresult==0)
-        {
+        } else if (rresult==0) {
             try {
                 throw new NoSuchElementException("BOOK NOT FOUND");
             }
@@ -92,6 +91,7 @@ public class BorrowBooks extends  AddBooks {
                 System.out.println(e.getMessage());
             }
         }
+
 
     }
 
