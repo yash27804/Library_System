@@ -16,6 +16,7 @@ class AddBooks
     {
         throwNullPointerException(isbn_param, title_param, author_param, publication_year_param);
         checkISBNLength(isbn_param);
+        checkISBN(isbn_param);
         this.isbn = isbn_param;
         this.author = author_param;
         this.title = title_param;
@@ -59,6 +60,22 @@ class AddBooks
         catch(RuntimeException e)
         {
             System.out.println(e.getMessage());
+        }
+
+    }
+    public void checkISBN(String isbn_param)
+    {
+
+        for(AddBooks a:abooks)
+        {
+            try {
+                if (a.isbn.equalsIgnoreCase(isbn_param)) {
+                    throw new RuntimeException("ISBN ALREADY EXISTS -> ISBN MUST BE UNIQUE");
+
+                }
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
         }
 
 
