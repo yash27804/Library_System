@@ -52,5 +52,18 @@ public class BorrowBooks extends  AddBooks {
             throw new RuntimeException("Not Available") ;
         }
     }
+    public void returnbook(String rbname)
+    {
+
+        if(rbname==null)
+        {
+
+        }
+        else if(rbname.isBlank())
+        {
+
+        }
+
+    }
 
 }
