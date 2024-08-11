@@ -82,9 +82,14 @@ class AddBooks
     public void getAllBooks()
     {
 
-        if(abooks.size()==0)
+        try {
+            if (abooks.size() == 0) {
+                throw new NoSuchElementException("No Books To Display");
+            }
+        }
+        catch(NoSuchElementException e)
         {
-            //throw new NoSuchElementException("No Books To Display");
+            System.out.println(e.getMessage());
         }
         for(AddBooks a:abooks)
         {
