@@ -35,6 +35,7 @@ public class BorrowBooks extends  AddBooks {
                 bbooks.add(new BorrowBooks(a.isbn,a.title,a.author,a.author));
                 bresult=1;
                 System.out.println("Borrow Successful");
+                break;
             }
             else
             {
@@ -48,7 +49,7 @@ public class BorrowBooks extends  AddBooks {
         }
         else if (bresult==0)
         {
-
+            throw new RuntimeException("Not Available") ;
         }
     }
 
