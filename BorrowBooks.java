@@ -21,11 +21,11 @@ public class BorrowBooks extends  AddBooks {
     {
         if(bname==null)
         {
-          
+            throw new NullPointerException("Name must be Given");
         }
         else if(bname.isBlank())
         {
-
+            throw new NullPointerException("Name must be Given");
         }
     }
 
