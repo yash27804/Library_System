@@ -57,13 +57,44 @@ public class BorrowBooks extends  AddBooks {
 
         if(rbname==null)
         {
-
+            throw new NullPointerException("BookName cannot be null");
         }
         else if(rbname.isBlank())
         {
+            throw new NullPointerException("BookName cannot be null");
+        }
 
+        int rresult=0;
+        for(BorrowBooks b:bbooks)
+        {
+            if(b.title.equalsIgnoreCase(rbname))
+            {
+                abooks.add(new BorrowBooks(b.isbn,b.title,b.author,b.author));
+                rresult=1;
+            }
+            else
+            {
+                rresult=0;
+            }
+
+        }
+        if(rresult==1)
+        {
+            bbooks.removeIf(e->e.title.equalsIgnoreCase(rbname));
+            System.out.println("Return Successful");
+        } else if (rresult==0)
+        {
+            try {
+                throw new NoSuchElementException("BOOK NOT FOUND");
+            }
+            catch(NoSuchElementException e)
+            {
+                System.out.println(e.getMessage());
+            }
         }
 
     }
 
+
 }
+
